@@ -20,11 +20,11 @@ app.get('/', async(req, res) => {
 })
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-  app.listen(process.env.PORT,()=>{
+mongoose.connect('mongodb+srv://kiran123:kiran123@cluster0.uejqhny.mongodb.net/?retryWrites=true&w=majority').then(()=>{
+  app.listen(4000,()=>{
     console.log(`listening on port ${process.env.PORT}` )
   })
 })
 .catch((err)=>{
-  console.log("error",process.env.MONGO_URI);
+  console.log("error",err);
 })
